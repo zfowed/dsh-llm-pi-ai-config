@@ -1,0 +1,87 @@
+/*
+ * SNAPSHOT — do not edit by hand.
+ *
+ * Source: @deepseek-ai/dsh-client-ui-primitives@0.2.0-rc.2
+ *         lib/Tooltip.module.css (md5 acb17103beb3a93195c0edc1c3b508a6)
+ * Taken from the installed bundle at
+ *   /tmp/asarx/out/dsh/node_modules/@deepseek-ai/dsh-client-ui-primitives/lib/Tooltip.module.css
+ * (the ASAR extracted by the polish harness; override with DSH_PRIMITIVES_DIR).
+ *
+ * Why a snapshot: the browser layout fixture (tests/layout/build-fixture.mjs)
+ * must reproduce the primitive's REAL box model. `.bubble` is the tooltip's own
+ * surface: `padding: 3px 7px` — 3px top/bottom against 7px left/right — on its
+ * own dark `--dsw-alias-tooltip-bg` background, with a static light foreground.
+ * That 3/7 asymmetry is exactly what T39 compensates for, so a hand-simulated
+ * `.bubble` carrying only the two colours cannot show whether the compensation
+ * worked. The rule's `position: fixed` is real too: the shipped component sets
+ * `left`/`top` inline from its own measurement, which the fixture mirrors.
+ *
+ * The DOM this styles (lib/index.js, the Tooltip component):
+ *   span.bubble[data-side][data-portal][data-pinned][data-align]
+ *     > span.label > (our `span.piai-root` wrapper: key chip + hint + lines)
+ * The fixture draws the same nesting; `span.label` is the primitive's own label
+ * box (`min-width: 0`), never part of our sheet.
+ */
+.bubble {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  position: fixed;
+  z-index: 100;
+  /* Fixed-position shrink-to-fit measures only the space from `left` to the
+     viewport edge, so anchors near the right edge would wrap early;
+     max-content sizes by the label alone, capped at half the viewport. */
+  width: max-content;
+  max-width: 50vw;
+  padding: 3px 7px;
+  border-radius: var(--dsw-radius-sm);
+  background: var(--dsw-alias-tooltip-bg);
+  color: var(--dsw-static-neutral-bluish-00);
+  font-size: 13px;
+  line-height: 20px;
+  white-space: pre-line;
+  /* Unbreakable tokens (URLs, paths) must not push past max-width. */
+  overflow-wrap: break-word;
+  pointer-events: none;
+  animation: tooltip-in 150ms var(--ds-ease-in-out);
+}
+
+.bubble[data-portal] { z-index: 1100; }
+.bubble[data-pinned] { pointer-events: auto; }
+.label { min-width: 0; }
+
+/* A 16px keycap centered beside a 20px label has 5px of vertical clearance. */
+.bubble[data-has-shortcut] { padding-inline-end: 5px; }
+.bubble[data-has-shortcut]:not(:has(.label)) { padding: 3px; }
+
+.bubble[data-side='right'] {
+  transform: translateY(-50%);
+}
+
+.bubble[data-side='bottom'] {
+  transform: translateX(-50%);
+}
+
+.bubble[data-side='top'] {
+  transform: translate(-50%, -100%);
+}
+
+/* End alignment: `left` carries the anchor's right edge, so the bubble sits
+   fully left of it instead of centering. */
+.bubble[data-side='bottom'][data-align='end'] {
+  transform: translateX(-100%);
+}
+
+.bubble[data-side='top'][data-align='end'] {
+  transform: translate(-100%, -100%);
+}
+
+@keyframes tooltip-in {
+  from { opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bubble {
+    animation: none;
+  }
+}

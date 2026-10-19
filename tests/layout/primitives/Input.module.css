@@ -1,0 +1,55 @@
+/*
+ * SNAPSHOT — do not edit by hand.
+ *
+ * Source: @deepseek-ai/dsh-client-ui-primitives@0.2.0-rc.2
+ *         lib/Input.module.css (md5 d75cd0880a389f0b4a5505d6c50e971f)
+ * Taken from the installed bundle at
+ *   /tmp/asarx/out/dsh/node_modules/@deepseek-ai/dsh-client-ui-primitives/lib/Input.module.css
+ * (the ASAR extracted by the polish harness; override with DSH_PRIMITIVES_DIR).
+ *
+ * Why a snapshot: the browser layout fixture (tests/layout/build-fixture.mjs)
+ * must reproduce the primitive's REAL box model — a 32px `.wrap` around the
+ * native `.input` — because the R1 criterion is "a normal text input still fills
+ * its `.piai-row-control` column ±1px", which only the real box model can show.
+ *
+ * The DOM this styles: `span.wrap > [span.icon] + input.input`
+ * (lib/types/Input.js: `jsxs("span", {className: css.wrap, ...})`).
+ */
+.wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 32px;
+  padding: 0 8px;
+  border: 0.5px solid var(--dsw-alias-border-l4);
+  border-radius: var(--dsw-radius-md);
+  background: var(--dsw-alias-bg-layer-1);
+}
+
+.wrap:focus-within {
+  border-color: var(--dsw-alias-state-business-primary);
+}
+
+.icon {
+  display: inline-flex;
+  width: 16px;
+  height: 16px;
+  align-items: center;
+  justify-content: center;
+  color: var(--dsw-alias-label-tertiary);
+}
+
+.input {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 14px;
+  line-height: 22px;
+  color: var(--dsw-alias-label-primary);
+}
+
+.input::placeholder {
+  color: var(--dsw-alias-label-dimmed);
+}

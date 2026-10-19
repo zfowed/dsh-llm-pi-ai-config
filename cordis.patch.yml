@@ -1,0 +1,14 @@
+# dsh-llm-pi-ai-config bundle layer.
+#
+# This package declares `dsh.bundle.patch` in its package.json, so installing it
+# into a profile (`dsh plugin --profile <name> add ...`) appends it to
+# dsh.profile.bundles and applies this layer automatically — the plugin mounts
+# with no manual cordis.patch.yml editing.
+#
+# The row carries no `config`: this plugin owns no host-side configuration. Its
+# whole surface is the browser half, discovered from the package.json
+# `dsh.client` declaration. The model configuration it edits belongs to the
+# `llm-pi-ai` row and is persisted there by the official config-editor path.
+- insert:
+    - id: llm-pi-ai-config
+      name: dsh-llm-pi-ai-config

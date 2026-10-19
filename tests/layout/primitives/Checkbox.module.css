@@ -1,0 +1,45 @@
+/*
+ * SNAPSHOT — do not edit by hand.
+ *
+ * Source: @deepseek-ai/dsh-client-ui-primitives@0.2.0-rc.2
+ *         lib/Checkbox.module.css (md5 0858a9e55b956fd9becaa8318f216f2d)
+ * Taken from the installed bundle at
+ *   /tmp/asarx/out/dsh/node_modules/@deepseek-ai/dsh-client-ui-primitives/lib/Checkbox.module.css
+ * (the ASAR extracted by the polish harness; override with DSH_PRIMITIVES_DIR).
+ *
+ * Why a snapshot: the browser layout fixture (tests/layout/build-fixture.mjs)
+ * must reproduce the primitive's REAL box model, and the stub harnesses cannot
+ * (they render `label > input > span` without the module CSS). The class names
+ * here are the module's unhashed local names; the fixture uses the same names.
+ *
+ * The DOM this styles: `label.checkbox > input[type=checkbox] + span`
+ * (lib/types/Checkbox.js: `jsxs("label", {className: css.checkbox, ...})`).
+ */
+.checkbox {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--dsw-alias-label-primary);
+  cursor: pointer;
+}
+
+.checkbox input {
+  flex: 0 0 auto;
+  width: 16px;
+  height: 16px;
+  margin: 0;
+  accent-color: var(--dsw-alias-brand-primary);
+  cursor: inherit;
+}
+
+.checkbox input:focus-visible {
+  outline: var(--dsw-focus-ring-width) solid var(--dsw-focus-ring-color, var(--dsw-alias-state-business-primary));
+  outline-offset: 2px;
+}
+
+.checkbox:has(input:disabled) {
+  cursor: default;
+  opacity: 0.5;
+}

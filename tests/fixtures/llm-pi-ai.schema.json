@@ -1,0 +1,1046 @@
+{
+  "uid": 382,
+  "refs": {
+    "239": {
+      "type": "number",
+      "meta": {
+        "max": 2147483647,
+        "default": 500
+      }
+    },
+    "240": {
+      "type": "number",
+      "meta": {
+        "max": 2147483647,
+        "default": 10000
+      }
+    },
+    "241": {
+      "type": "number",
+      "meta": {
+        "min": 0,
+        "max": 1,
+        "default": 0.1
+      }
+    },
+    "242": {
+      "type": "object",
+      "meta": {
+        "default": {}
+      },
+      "dict": {
+        "initialDelayMs": 239,
+        "maxDelayMs": 240,
+        "jitterRatio": 241
+      }
+    },
+    "243": {
+      "type": "const",
+      "meta": {
+        "required": true
+      },
+      "value": "normal"
+    },
+    "244": {
+      "type": "number",
+      "meta": {
+        "step": 1,
+        "min": 0,
+        "max": 9007199254740991,
+        "default": 5
+      }
+    },
+    "245": {
+      "type": "string",
+      "meta": {}
+    },
+    "246": {
+      "type": "array",
+      "meta": {
+        "default": [
+          "EMPTY_RESPONSE",
+          "RATE_LIMIT",
+          "SERVER",
+          "TIMEOUT",
+          "TRANSPORT"
+        ]
+      },
+      "inner": 245
+    },
+    "247": {
+      "type": "object",
+      "meta": {
+        "default": {}
+      },
+      "dict": {
+        "mode": 243,
+        "maxRetries": 244,
+        "retryableCodes": 246,
+        "backoff": 242
+      }
+    },
+    "248": {
+      "type": "const",
+      "meta": {
+        "required": true
+      },
+      "value": "always"
+    },
+    "249": {
+      "type": "object",
+      "meta": {
+        "default": {}
+      },
+      "dict": {
+        "mode": 248,
+        "backoff": 242
+      }
+    },
+    "250": {
+      "type": "union",
+      "meta": {},
+      "list": [
+        247,
+        249
+      ]
+    },
+    "251": {
+      "type": "number",
+      "meta": {}
+    },
+    "252": {
+      "type": "number",
+      "meta": {}
+    },
+    "253": {
+      "type": "number",
+      "meta": {}
+    },
+    "254": {
+      "type": "number",
+      "meta": {}
+    },
+    "255": {
+      "type": "object",
+      "meta": {
+        "default": {}
+      },
+      "dict": {
+        "minimal": 251,
+        "low": 252,
+        "medium": 253,
+        "high": 254
+      }
+    },
+    "256": {
+      "type": "string",
+      "meta": {}
+    },
+    "257": {
+      "type": "number",
+      "meta": {}
+    },
+    "258": {
+      "type": "boolean",
+      "meta": {}
+    },
+    "259": {
+      "type": "const",
+      "meta": {},
+      "value": null
+    },
+    "260": {
+      "type": "const",
+      "meta": {
+        "required": true
+      },
+      "value": "thinking.enabled"
+    },
+    "261": {
+      "type": "const",
+      "meta": {
+        "required": true
+      },
+      "value": "thinking.effort"
+    },
+    "262": {
+      "type": "const",
+      "meta": {
+        "required": true
+      },
+      "value": "thinking.budget"
+    },
+    "263": {
+      "type": "union",
+      "meta": {
+        "required": true
+      },
+      "list": [
+        260,
+        261,
+        262
+      ]
+    },
+    "264": {
+      "type": "boolean",
+      "meta": {}
+    },
+    "265": {
+      "type": "object",
+      "meta": {
+        "default": {}
+      },
+      "dict": {
+        "$var": 263,
+        "omitWhenOff": 264
+      }
+    },
+    "266": {
+      "type": "union",
+      "meta": {},
+      "list": [
+        256,
+        257,
+        258,
+        259,
+        265
+      ]
+    },
+    "267": {
+      "type": "boolean",
+      "meta": {}
+    },
+    "268": {
+      "type": "boolean",
+      "meta": {}
+    },
+    "269": {
+      "type": "boolean",
+      "meta": {}
+    },
+    "270": {
+      "type": "boolean",
+      "meta": {}
+    },
+    "271": {
+      "type": "boolean",
+      "meta": {}
+    },
+    "272": {
+      "type": "union",
+      "meta": {},
+      "list": [
+        273,
+        274
+      ]
+    },
+    "273": {
+      "type": "const",
+      "meta": {
+        "required": true
+      },
+      "value": "max_completion_tokens"
+    },
+    "274": {
+      "type": "const",
+      "meta": {
+        "required": true
+      },
+      "value": "max_tokens"
+    },
+    "275": {
+      "type": "boolean",
+      "meta": {}
+    },
+    "276": {
+      "type": "boolean",
+      "meta": {}
+    },
+    "277": {
+      "type": "boolean",
+      "meta": {}
+    },
+    "278": {
+      "type": "boolean",
+      "meta": {}
+    },
+    "279": {
+      "type": "union",
+      "meta": {},
+      "list": [
+        280,
+        281,
+        282,
+        283,
+        284,
+        285,
+        286,
+        287,
+        288,
+        289,
+        290
+      ]
+    },
+    "280": {
+      "type": "const",
+      "meta": {
+        "required": true
+      },
+      "value": "openai"
+    },
+    "281": {
+      "type": "const",
+      "meta": {
+        "required": true
+      },
+      "value": "deepseek"
+    },
+    "282": {
+      "type": "const",
+      "meta": {
+        "required": true
+      },
+      "value": "openrouter"
+    },
+    "283": {
+      "type": "const",
+      "meta": {
+        "required": true
+      },
+      "value": "together"
+    },
+    "284": {
+      "type": "const",
+      "meta": {
+        "required": true
+      },
+      "value": "baseten"
+    },
+    "285": {
+      "type": "const",
+      "meta": {
+        "required": true
+      },
+      "value": "zai"
+    },
+    "286": {
+      "type": "const",
+      "meta": {
+        "required": true
+      },
+      "value": "qwen"
+    },
+    "287": {
+      "type": "const",
+      "meta": {
+        "required": true
+      },
+      "value": "chat-template"
+    },
+    "288": {
+      "type": "const",
+      "meta": {
+        "required": true
+      },
+      "value": "qwen-chat-template"
+    },
+    "289": {
+      "type": "const",
+      "meta": {
+        "required": true
+      },
+      "value": "string-thinking"
+    },
+    "290": {
+      "type": "const",
+      "meta": {
+        "required": true
+      },
+      "value": "ant-ling"
+    },
+    "291": {
+      "type": "dict",
+      "meta": {
+        "default": {}
+      },
+      "inner": 266,
+      "sKey": 292
+    },
+    "292": {
+      "type": "string",
+      "meta": {}
+    },
+    "293": {
+      "type": "dict",
+      "meta": {
+        "default": {}
+      },
+      "inner": 266,
+      "sKey": 294
+    },
+    "294": {
+      "type": "string",
+      "meta": {}
+    },
+    "295": {
+      "type": "boolean",
+      "meta": {}
+    },
+    "296": {
+      "type": "union",
+      "meta": {},
+      "list": [
+        297,
+        298,
+        299
+      ]
+    },
+    "297": {
+      "type": "const",
+      "meta": {
+        "required": true
+      },
+      "value": "thinking_token_budget"
+    },
+    "298": {
+      "type": "const",
+      "meta": {
+        "required": true
+      },
+      "value": "thinking_budget"
+    },
+    "299": {
+      "type": "const",
+      "meta": {
+        "required": true
+      },
+      "value": "thinking_budget_tokens"
+    },
+    "300": {
+      "type": "number",
+      "meta": {
+        "step": 1
+      }
+    },
+    "301": {
+      "type": "boolean",
+      "meta": {}
+    },
+    "302": {
+      "type": "boolean",
+      "meta": {}
+    },
+    "303": {
+      "type": "union",
+      "meta": {},
+      "list": [
+        304
+      ]
+    },
+    "304": {
+      "type": "const",
+      "meta": {
+        "required": true
+      },
+      "value": "anthropic"
+    },
+    "305": {
+      "type": "boolean",
+      "meta": {}
+    },
+    "306": {
+      "type": "boolean",
+      "meta": {}
+    },
+    "307": {
+      "type": "boolean",
+      "meta": {}
+    },
+    "308": {
+      "type": "boolean",
+      "meta": {}
+    },
+    "309": {
+      "type": "boolean",
+      "meta": {}
+    },
+    "310": {
+      "type": "boolean",
+      "meta": {}
+    },
+    "311": {
+      "type": "boolean",
+      "meta": {}
+    },
+    "312": {
+      "type": "object",
+      "meta": {
+        "default": {}
+      },
+      "dict": {
+        "supportsStore": 267,
+        "supportsDeveloperRole": 268,
+        "supportsReasoningEffort": 269,
+        "supportsUsageInStreaming": 270,
+        "supportsFinishReason": 271,
+        "maxTokensField": 272,
+        "requiresToolResultName": 275,
+        "requiresAssistantAfterToolResult": 276,
+        "requiresThinkingAsText": 277,
+        "requiresReasoningContentOnAssistantMessages": 278,
+        "thinkingFormat": 279,
+        "chatTemplateKwargs": 291,
+        "chatTemplateArgs": 293,
+        "supportsThinkingTokenBudget": 295,
+        "thinkingTokenBudgetField": 296,
+        "vllmPriority": 300,
+        "supportsMaxOutputTokens": 301,
+        "supportsStrictMode": 302,
+        "cacheControlFormat": 303,
+        "supportsLongCacheRetention": 305,
+        "supportsEagerToolInputStreaming": 306,
+        "supportsCacheControlOnTools": 307,
+        "supportsTemperature": 308,
+        "forceAdaptiveThinking": 309,
+        "allowEmptySignature": 310,
+        "supportsStrictTools": 311
+      }
+    },
+    "313": {
+      "type": "string",
+      "meta": {}
+    },
+    "314": {
+      "type": "const",
+      "meta": {},
+      "value": null
+    },
+    "315": {
+      "type": "union",
+      "meta": {},
+      "list": [
+        313,
+        314
+      ]
+    },
+    "316": {
+      "type": "union",
+      "meta": {},
+      "list": [
+        317,
+        318,
+        319,
+        320,
+        321,
+        322,
+        323
+      ]
+    },
+    "317": {
+      "type": "const",
+      "meta": {
+        "required": true
+      },
+      "value": "off"
+    },
+    "318": {
+      "type": "const",
+      "meta": {
+        "required": true
+      },
+      "value": "minimal"
+    },
+    "319": {
+      "type": "const",
+      "meta": {
+        "required": true
+      },
+      "value": "low"
+    },
+    "320": {
+      "type": "const",
+      "meta": {
+        "required": true
+      },
+      "value": "medium"
+    },
+    "321": {
+      "type": "const",
+      "meta": {
+        "required": true
+      },
+      "value": "high"
+    },
+    "322": {
+      "type": "const",
+      "meta": {
+        "required": true
+      },
+      "value": "xhigh"
+    },
+    "323": {
+      "type": "const",
+      "meta": {
+        "required": true
+      },
+      "value": "max"
+    },
+    "324": {
+      "type": "dict",
+      "meta": {
+        "default": {}
+      },
+      "inner": 315,
+      "sKey": 316
+    },
+    "325": {
+      "type": "string",
+      "meta": {}
+    },
+    "326": {
+      "type": "number",
+      "meta": {
+        "step": 1,
+        "min": 1
+      }
+    },
+    "327": {
+      "type": "number",
+      "meta": {
+        "step": 1,
+        "min": 1
+      }
+    },
+    "328": {
+      "type": "union",
+      "meta": {},
+      "list": [
+        329,
+        330
+      ]
+    },
+    "329": {
+      "type": "const",
+      "meta": {
+        "required": true
+      },
+      "value": "text"
+    },
+    "330": {
+      "type": "const",
+      "meta": {
+        "required": true
+      },
+      "value": "image"
+    },
+    "331": {
+      "type": "array",
+      "meta": {
+        "default": []
+      },
+      "inner": 328
+    },
+    "332": {
+      "type": "const",
+      "meta": {},
+      "value": false
+    },
+    "333": {
+      "type": "union",
+      "meta": {},
+      "list": [
+        332,
+        324
+      ]
+    },
+    "334": {
+      "type": "string",
+      "meta": {
+        "required": true
+      }
+    },
+    "335": {
+      "type": "object",
+      "meta": {
+        "default": {}
+      },
+      "dict": {
+        "id": 334,
+        "name": 325,
+        "contextWindow": 326,
+        "maxTokens": 327,
+        "input": 331,
+        "reasoningEfforts": 333,
+        "compat": 312
+      }
+    },
+    "336": {
+      "type": "object",
+      "meta": {
+        "default": {}
+      },
+      "dict": {
+        "name": 325,
+        "contextWindow": 326,
+        "maxTokens": 327,
+        "input": 331,
+        "reasoningEfforts": 333,
+        "compat": 312
+      }
+    },
+    "337": {
+      "type": "string",
+      "meta": {
+        "role": "credential-ref"
+      }
+    },
+    "338": {
+      "type": "string",
+      "meta": {}
+    },
+    "339": {
+      "type": "union",
+      "meta": {},
+      "list": [
+        340,
+        341,
+        342
+      ]
+    },
+    "340": {
+      "type": "const",
+      "meta": {
+        "required": true
+      },
+      "value": "openai-completions"
+    },
+    "341": {
+      "type": "const",
+      "meta": {
+        "required": true
+      },
+      "value": "openai-responses"
+    },
+    "342": {
+      "type": "const",
+      "meta": {
+        "required": true
+      },
+      "value": "anthropic-messages"
+    },
+    "343": {
+      "type": "string",
+      "meta": {}
+    },
+    "344": {
+      "type": "array",
+      "meta": {
+        "default": []
+      },
+      "inner": 335
+    },
+    "345": {
+      "type": "dict",
+      "meta": {
+        "default": {}
+      },
+      "inner": 336,
+      "sKey": 346
+    },
+    "346": {
+      "type": "string",
+      "meta": {}
+    },
+    "347": {
+      "type": "number",
+      "meta": {
+        "step": 1,
+        "min": 1,
+        "default": 262144
+      }
+    },
+    "348": {
+      "type": "number",
+      "meta": {
+        "step": 1,
+        "min": 1,
+        "default": 32768
+      }
+    },
+    "349": {
+      "type": "union",
+      "meta": {},
+      "list": [
+        350,
+        351
+      ]
+    },
+    "350": {
+      "type": "const",
+      "meta": {
+        "required": true
+      },
+      "value": "text"
+    },
+    "351": {
+      "type": "const",
+      "meta": {
+        "required": true
+      },
+      "value": "image"
+    },
+    "352": {
+      "type": "array",
+      "meta": {
+        "default": [
+          "text"
+        ]
+      },
+      "inner": 349
+    },
+    "353": {
+      "type": "string",
+      "meta": {}
+    },
+    "354": {
+      "type": "dict",
+      "meta": {
+        "default": {}
+      },
+      "inner": 353,
+      "sKey": 355
+    },
+    "355": {
+      "type": "string",
+      "meta": {}
+    },
+    "356": {
+      "type": "union",
+      "meta": {},
+      "list": [
+        357,
+        358,
+        359,
+        360,
+        361,
+        362,
+        363
+      ]
+    },
+    "357": {
+      "type": "const",
+      "meta": {
+        "required": true
+      },
+      "value": "off"
+    },
+    "358": {
+      "type": "const",
+      "meta": {
+        "required": true
+      },
+      "value": "minimal"
+    },
+    "359": {
+      "type": "const",
+      "meta": {
+        "required": true
+      },
+      "value": "low"
+    },
+    "360": {
+      "type": "const",
+      "meta": {
+        "required": true
+      },
+      "value": "medium"
+    },
+    "361": {
+      "type": "const",
+      "meta": {
+        "required": true
+      },
+      "value": "high"
+    },
+    "362": {
+      "type": "const",
+      "meta": {
+        "required": true
+      },
+      "value": "xhigh"
+    },
+    "363": {
+      "type": "const",
+      "meta": {
+        "required": true
+      },
+      "value": "max"
+    },
+    "364": {
+      "type": "union",
+      "meta": {},
+      "list": [
+        365,
+        366,
+        367
+      ]
+    },
+    "365": {
+      "type": "const",
+      "meta": {
+        "required": true
+      },
+      "value": "none"
+    },
+    "366": {
+      "type": "const",
+      "meta": {
+        "required": true
+      },
+      "value": "short"
+    },
+    "367": {
+      "type": "const",
+      "meta": {
+        "required": true
+      },
+      "value": "long"
+    },
+    "368": {
+      "type": "union",
+      "meta": {},
+      "list": [
+        369,
+        370,
+        371,
+        372
+      ]
+    },
+    "369": {
+      "type": "const",
+      "meta": {
+        "required": true
+      },
+      "value": "sse"
+    },
+    "370": {
+      "type": "const",
+      "meta": {
+        "required": true
+      },
+      "value": "websocket"
+    },
+    "371": {
+      "type": "const",
+      "meta": {
+        "required": true
+      },
+      "value": "websocket-cached"
+    },
+    "372": {
+      "type": "const",
+      "meta": {
+        "required": true
+      },
+      "value": "auto"
+    },
+    "373": {
+      "type": "number",
+      "meta": {
+        "step": 1,
+        "min": 0
+      }
+    },
+    "374": {
+      "type": "number",
+      "meta": {
+        "step": 1,
+        "min": 0
+      }
+    },
+    "375": {
+      "type": "number",
+      "meta": {
+        "min": 5e-324,
+        "max": 2147483647,
+        "default": 300000
+      }
+    },
+    "376": {
+      "type": "number",
+      "meta": {
+        "step": 1,
+        "min": 1,
+        "default": 20971520
+      }
+    },
+    "377": {
+      "type": "number",
+      "meta": {
+        "step": 1,
+        "min": 1,
+        "default": 4194304
+      }
+    },
+    "378": {
+      "type": "number",
+      "meta": {
+        "step": 1,
+        "min": 1,
+        "default": 1048576
+      }
+    },
+    "379": {
+      "type": "object",
+      "meta": {
+        "default": {}
+      },
+      "dict": {
+        "apiKeyEnv": 337,
+        "displayName": 338,
+        "api": 339,
+        "baseURL": 343,
+        "models": 344,
+        "modelOverrides": 345,
+        "compat": 312,
+        "defaultContextWindow": 347,
+        "defaultMaxTokens": 348,
+        "defaultInput": 352,
+        "headers": 354,
+        "reasoning": 356,
+        "thinkingBudgets": 255,
+        "cacheRetention": 364,
+        "transport": 368,
+        "timeoutMs": 373,
+        "websocketConnectTimeoutMs": 374,
+        "streamIdleTimeoutMs": 375,
+        "maxRequestImageBytes": 376,
+        "requestImagePixelBudget": 377,
+        "requestImageMaxBytes": 378,
+        "retryPolicy": 250
+      }
+    },
+    "380": {
+      "type": "string",
+      "meta": {}
+    },
+    "381": {
+      "type": "dict",
+      "meta": {
+        "default": {},
+        "volatile": true
+      },
+      "inner": 379,
+      "sKey": 380
+    },
+    "382": {
+      "type": "object",
+      "meta": {
+        "default": {}
+      },
+      "dict": {
+        "providers": 381
+      }
+    }
+  }
+}

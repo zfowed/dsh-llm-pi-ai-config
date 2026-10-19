@@ -1,0 +1,37 @@
+{
+  "name": "dsh-llm-pi-ai-config",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Extended model configuration surface for @deepseek-ai/dsh-llm-pi-ai: a Settings page that edits every user-configurable provider and model field the adapter supports.",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "cordis.patch.yml",
+    "README.md",
+    "AGENTS.md",
+    "docs"
+  ],
+  "scripts": {
+    "test": "node --test",
+    "snapshot": "node scripts/snapshot-schema.mjs"
+  },
+  "dsh": {
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-locale",
+        "@deepseek-ai/dsh-client-ui-settings"
+      ]
+    },
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "license": "MIT"
+}
